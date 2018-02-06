@@ -13,7 +13,9 @@ search_wrap = true
 
 [colors]
 # hard contrast: background = #1d2021
-background = #282828
+# transparancy:
+background = rgba(40, 40, 40, 0.8)
+# regular: background = #282828
 # soft contrast: background = #32302f
 foreground = #ebdbb2
 foreground_bold = #ebdbb2
