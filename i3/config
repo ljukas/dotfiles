@@ -4,9 +4,6 @@
 
 set $mod Mod4
 
-
-font pango:monospace 8
-
 floating_modifier $mod
 
 bindsym $mod+Return exec termite
@@ -70,8 +67,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1 "
-set $workspace2 "2 "
+set $workspace1 "1 "
+set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
 set $workspace5 "5 "
@@ -137,8 +134,8 @@ gaps outer 10
 gaps inner 10
 
 # Border
-new_window pixel 3
-hide_edge_borders smart
+#new_window pixel 3
+#hide_edge_borders smart
 
 # Keyboard layout
 set $keyboard_layout Keyboard Layout: (s) Swedish, (e) US English
@@ -153,49 +150,62 @@ bindsym Escape mode "default"
 }
 bindsym $mod+shift+Z mode "$keyboard_layout"
 
+#########
+# Theme #
+#########
 
-set $bg-color 	         #2f343f
-set $border-color	 #59ABE3
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+# Gruvbox colors
+set $bg		#282828
+set $red	#cc241d
+set $green	#98971a
+set $yellow	#d79921
+set $blue	#458588
+set $purple	#b16286
+set $aqua	#689d68
+set $gray	#a89984
+set $darkgray	#1d2021
 
-# window colors
-#                       border              background         text                 indicator		child-border
-client.focused          $bg-color	    $bg-color          $text-color	    $border-color	$border-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color	$inactive-bg-color
-client.focused_inactive $bg-color	    $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+# Set font used by titles and bars
+font pango:monospace 10
+
+## Window title bars & Borders section
+
+# blue gruvbox
+# class			border|backgr|text|indicator|child_border
+client.focused		$blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused	$darkgray $darkgray $yellow $purple $darkgray
+client.urgent		$red $red $white $red $red
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font pango:monospace 14px
-    position top
+    position bottom
     status_command SCRIPT_DIR=~/.config/i3/scripts i3blocks -c /home/lukas/.config/i3/i3blocks.conf
     colors {
-    	   background $bg-color
-	   separator #757575
-	   #                  border             background         text
-	   focused_workspace  $bg-color          $bg-color          $text-color
-	   inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-	   urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+	# bar background color
+	background $bg
+	# text color used for blocks that dont have a color specified
+	statusline $yellow
+	#workspace section
+	#			border	backgr.	text
+	focused_workspace	$aqua	$aqua	$darkgray
+	inactive_workspace	$darkgray $darkgray $yellow
+	active_workspace	$darkgray $darkgray $yellow
+	urgent_workspace	$red	$red	$bg
     }
 }
+# end of window title bars & border section
+
 
 # default workspaces
 assign [class="Spotify"] $workspace7
 assign [class="Toolbox"] $workspace4
-for_window [class="Toolbox"] floating enabled
 for_window [class="Spotify"] move to workspace $workspace7
 
 # Startup
-exec_always --no-startup-id feh --bg-scale user/Pictures/abstractgalaxy.png
 exec --no-startup-id spotify
 exec --no-startup-id nm-applet
-#exec --no-startup-id jetbrains-toolbox --disable-seccomp-filter-sandbox
-exec --no-startup-id compton -f
+exec --no-startup-id compton --config ~/dotfiles/i3/compton.conf -b
 exec --no-startup-id dropbox-cli start
-exec google-chrome -no-default-browser-check
-
+exec_always --no-startup-id feh --bg-scale ~/user/Pictures/abstractgalaxy.png

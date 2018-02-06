@@ -41,7 +41,11 @@ for file in $dot_files; do
     ln -s $dot_dir/$file $HOME/$file
 done
 
-
+# Specials
+# Backup old compton.conf file.
+mv $config_dir/i3/compton.conf $old_dot_dir/$i3/compton.conf
+# Setup Symlink
+ln -s $dot_dir/i3/compton.conf $config_dir/i3/compton.conf
 
 
 
