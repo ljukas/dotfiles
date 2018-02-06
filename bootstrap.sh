@@ -31,6 +31,15 @@ for folder in $config_dirs; do
     ln -s $dot_dir/$folder/config $config_dir/$folder/config
 done
 
+# Setup symlinks for standard dotfiles
+dot_files=".Xresources"
+
+for file in $dot_files; do
+    echo "Move any dotfile to $old_dot_dir.."
+    mv $HOME/$file $old_dot_dir/$file
+    echo "Creating symlink for $file"
+    ln -s $dot_dir/$file $HOME/$file
+done
 
 
 
