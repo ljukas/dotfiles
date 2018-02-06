@@ -6,28 +6,33 @@
 #
 
 ## Variables
+dot_dir=$HOME/dotfiles
+old_dot_dir=$HOME/old_dotfiles
+config_dir=$HOME/.config
 
-dir=~/dotfiles			# Dotfiles directory
-olddir=~/dotfiles_old		# Backup folder for old dotfiles
-files=".Xresources"		# List of files to symlink
+## Dirs to create
+dirs_to_make=".config .config/i3 .config/termite .config/rofi old_dotfiles"
 
-
-## Create folders
-echo "Createing $olddir for backup of an existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
-
-## Change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
-
-## Move any dotfiles to ~ and move existing dofiles to backup dir.
-for file in $files; do
-	echo "Moving old $file to $olddir"
-	mv ~/$file ~/dotfiles_old/
-	echo "Creating symlink for $file"
-	ln -s $dir/$file ~/$file
+for dir in $dirs_to_make; do
+    echo "Creating $dir"
+    mkdir -p $HOME/$dir
 done
+
+
+# Setup symlinks for config files
+config_dirs="i3 termite rofi"
+
+for folder in $config_dirs; do
+    echo "Creating backup dir in $old_dot_dir for $folder"
+    mkdir -p $old_dot_dir/$folder
+    echo "Move any existing config file to it.."
+    mv $config_dir/$folder/config $old_dot_dir/$folder/config
+    echo "Creating symlink for $folder.."
+    ln -s $dot_dir/$folder/config $config_dir/$folder/config
+done
+
+
+
+
 
 
