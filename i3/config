@@ -35,17 +35,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+b split h
-
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -208,4 +199,4 @@ exec --no-startup-id spotify
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/dotfiles/i3/compton.conf -b
 exec --no-startup-id dropbox-cli start
-exec_always --no-startup-id feh --bg-scale ~/user/Pictures/abstractgalaxy.png
+exec_always --no-startup-id feh --bg-scale ~/user/Pictures/road.jpg
