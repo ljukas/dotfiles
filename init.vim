@@ -46,7 +46,7 @@ set mat=2
 set foldcolumn=1
 
 """"""""""""""
-" Plugins 
+" Plugins
 """"""""""""""
 
 " Specify directory for pluggins
@@ -99,9 +99,9 @@ set expandtab
 " Be smart when using tabs :D
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -122,7 +122,7 @@ set nowb
 set noswapfile
 
 """""""""""""
-" Bindings 
+" Bindings
 """""""""""""
 
 " Smart way to move between windows
@@ -130,4 +130,3 @@ map <C-j> <C-W>j
 map <C-h> <C-W>h
 map <C-k> <C-W>k
 map <C-l> <C-W>l
-

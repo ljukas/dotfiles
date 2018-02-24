@@ -5,53 +5,73 @@
 # Made by: Lukas Lindqvist
 #
 
-## Variables
+############
+## GLOBAL ##
+############
+
 dot_dir=$HOME/dotfiles
-old_dot_dir=$HOME/old_dotfiles
+backup=$HOME/backup_dotfiles
+
+######################
+## .config-dotfiles ##
+######################
+
+
+echo "---------------------------"
+echo "-> Setup .config dotfiles."
+echo "---------------------------"
+
 config_dir=$HOME/.config
 
 ## Dirs to create
-dirs_to_make=".config .config/i3 .config/termite .config/nvim .config/rofi old_dotfiles"
+dirs_to_make="i3 nvim rofi polybar termite"
 
+## File paths for config files (dotfiles residing in .config)
+nvim="nvim/init.vim"
+i3="i3/config"
+compton="i3/compton.conf"
+rofi="rofi/config"
+polybar="polybar/config"
+termite="termite/config"
+
+## List of file paths
+config_files="$nvim $i3 $compton $rofi $polybar $termite"
+
+## Create the required directories
+mkdir -p $config_dir
 for dir in $dirs_to_make; do
-    echo "Creating $dir"
-    mkdir -p $HOME/$dir
-    mkdir -p $old_dot_dir/$dir
+    echo "Creating: '${config_dir}/${dir}'"
+    mkdir -p $config_dir/$dir
+    echo "Creating: '${backup}/${dir}'"
+    mkdir -p $backup/$dir
+done
+
+## Backup and setup symlink for config file
+for file in $config_files; do
+    if [ -f "$config_dir/$file" ]
+    then
+        echo "Backing up '${file}'."
+        mv $config_dir/$file $backup/$file
+    fi
+    echo "Setting up symlink for '${file}'."
+    ln -s $dot_dir/$file $config_dir/$file
 done
 
 
-# Move old dot files to backup folder
-echo "Moving old dot files to backup.."
-mv $config_dir/i3/config $old_dot_dir/i3/config
-mv $config_dir/i3/compton.conf $old_dot_dir/i3/compton.confg
-mv $config_dir/termite/config $old_dot_dir/termite/config
-mv $config_dir/rofi/config $old_dot_dir/rofi/config
-mv $config_dir/nvim/init.vim $old_dot_dir/nvim/init.vim
+#################
+## ~/ dotfiles ##
+#################
 
-# Setup symlinks
-echo "Setting up symlinks"
-ln -s $dot_dir/i3/config $config_dir/i3/config
-ln -s $dot_dir/i3/compton.conf $config_dir/i3/compton.conf
-ln -s $dot_dir/termite/config $config_dir/termite/config
-ln -s $dot_dir/rofi/config $config_dir/rofi/config
-ln -s $dot_dir/nvim/init.vim $config_dir/nvim/init.vim
-
+echo "----------------------"
+echo "-> Setup ~/ dotfiles."
+echo "----------------------"
 
 # Setup symlinks for standard dotfiles
 dot_files=".Xresources"
 
 for file in $dot_files; do
-    echo "Move any dotfile to $old_dot_dir.."
-    mv $HOME/$file $old_dot_dir/$file
-    echo "Creating symlink for $file"
+    echo "Backing up '${file}'."
+    mv $HOME/$file $backup/$file
+    echo "Setting up symlink for $file"
     ln -s $dot_dir/$file $HOME/$file
 done
-
-# Specials
-# Backup old compton.conf file.
-mv $config_dir/i3/compton.conf $old_dot_dir/$i3/compton.conf
-# Setup Symlink
-ln -s $dot_dir/i3/compton.conf $config_dir/i3/compton.conf
-
-
-
