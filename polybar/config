@@ -14,8 +14,8 @@ black = ${xrdb:color0}
 darkgrey = ${xrdb:color8}
 darkred = ${xrdb:color1}
 red = ${xrdb:color9}
-darkgreen = ${xredb:color2}
-green ${xrdb:color10}
+darkgreen = ${xrdb:color2}
+green = ${xrdb:color10}
 darkyellow = ${xrdb:color3}
 yellow = ${xrdb:color11}
 darkblue = ${xrdb:color4}
@@ -51,11 +51,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = source code pro:pixelsize=12:antialias=true;2
+font-0 = "Source Code Pro:pixelsize=12"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = WunconSiji:pixelsize=10;3
+font-2 = "Wuncon Siji:pixelsize=10"
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = xwindow
 modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -80,17 +80,15 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = ${env:ICON_KEYBOARD} 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-format-prefix-underline = ${colors.red}
+format-prefix-underline = ${colors.blue}
 
 label-layout = %layout%
-label-layout-underline = ${colors.red}
+label-layout-underline = ${colors.blue}
 
 label-indicator-padding = 1
 label-indicator-margin = 1
-label-indicator-background = ${colors.red}
-label-indicator-underline = ${colors.red}
 
 [module/filesystem]
 type = internal/fs
@@ -100,29 +98,8 @@ mount-0 = /
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.foreground}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -134,18 +111,18 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground = ${colors.black}
+label-mode-background = ${colors.blue}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.darkmagenta}
+label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = ${self.label-mode-padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -155,8 +132,8 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-background = ${colors.red}
+label-urgent-padding = ${self.label-focused-padding}
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -329,24 +306,24 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.green}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors.yellow}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${colors.darkgreen}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/temperature]
