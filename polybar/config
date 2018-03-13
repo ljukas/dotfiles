@@ -51,7 +51,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Source Code Pro:pixelsize=12;0"
+font-0 = "Meslo LG L DZ:pixelsize=12;1"
 font-1 = "Wuncon Siji:pixelsize=12;0"
 
 modules-left = i3
