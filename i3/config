@@ -128,7 +128,7 @@ gaps inner 10
 #hide_edge_borders smart
 
 # Keyboard layout
-set $keyboard_layout Keyboard Layout: (s) Swedish, (e) US English
+set $keyboard_layout Keyboard: (s) se, (e) us 
 mode "$keyboard_layout" {
 
 bindsym s exec --no-startup-id setxkbmap se ,mode "default"
@@ -161,6 +161,7 @@ font pango:monospace 10
 
 ## Window title bars & Borders section
 new_window pixel 3
+
 
 # blue gruvbox
 # class			border|backgr|text|indicator|child_border
