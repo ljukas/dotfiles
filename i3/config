@@ -128,7 +128,7 @@ gaps inner 10
 #hide_edge_borders smart
 
 # Keyboard layout
-set $keyboard_layout Keyboard: (s) se, (e) us 
+set $keyboard_layout Keyboard: (s) se, (e) us
 mode "$keyboard_layout" {
 
 bindsym s exec --no-startup-id setxkbmap se ,mode "default"

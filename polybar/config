@@ -9,6 +9,7 @@
 
 [colors]
 background = ${xrdb:background:#222}
+softbackground = #32302f
 foreground = ${xrdb:foreground:#222}
 black = ${xrdb:color0}
 darkgrey = ${xrdb:color8}
@@ -67,14 +68,14 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-background = ${colors.darkmagenta}
-format-foreground = ${colors.background}
+format-foreground = ${colors.softbackground}
 
 format = <label-layout>
 format-padding = 1
 
 format-prefix = 
 format-prefix-font = 2
-format-prefix-foreground = ${colors.background}
+format-prefix-foreground = ${colors.softbackground}
 format-prefix-padding = 1
 
 label-layout = %layout%
@@ -101,7 +102,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = ${colors.black}
+label-mode-foreground = ${colors.background}
 label-mode-background = ${colors.blue}
 
 ; focused = Active workspace on focused monitor
@@ -112,11 +113,13 @@ label-focused-padding = ${self.label-mode-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${self.label-mode-padding}
+label-unfocused-padding = 1
+label-unfocused-background = ${colors.softbackground}
+
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
+label-visible-background = ${colors.softbackground}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
@@ -188,7 +191,7 @@ format-connected = <label-connected>
 format-connected-padding = 2
 format-connected-background = ${colors.darkgreen}
 label-connected =  %essid%
-label-connected-foreground = ${colors.background}
+label-connected-foreground = ${colors.softbackground}
 
 format-disconnected = "No Wifi"
 format-disconnected-padding = 1
@@ -224,7 +227,7 @@ time = " %H:%M"
 format-padding = 2
 format-prefix = 
 format-prefix-font = 1
-format-foreground = ${colors.background}
+format-foreground = ${colors.softbackground}
 format-background = ${colors.darkred}
 ;format-underline = ${colors.darkred}
 
@@ -297,7 +300,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <ramp-capacity> <label-charging>
-format-charging-foreground = ${colors.background}
+format-charging-foreground = ${colors.softbackground}
 format-charging-background = ${colors.darkgreen}
 format-charging-padding = 2
 
@@ -306,14 +309,14 @@ format-discharging-background = ${colors.darkyellow}
 format-discharging-padding = 2
 
 format-full = <ramp-capacity> <label-full>
-format-full-prefix-foreground = ${colors.background}
+format-full-prefix-foreground = ${colors.softbackground}
 format-full-background = ${colors.darkblue}
 format-full-padding = 2
 
 ramp-capacity-0 = ☠
 ramp-capacity-1 = 
 ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.background}
+ramp-capacity-foreground = ${colors.softbackground}
 ramp-font = 2
 
 label-charging-foreground = ${colors.background}
