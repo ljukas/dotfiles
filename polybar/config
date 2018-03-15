@@ -48,6 +48,7 @@ border-color = #00000000
 
 font-0 = "DejaVu Sans Mono Nerd Font:size=12;2"
 font-1 = "Droid Sans Mono Nerd Font Complete:size=11;3"
+font-2 = "Wuncon Siji:size=12;2"
 
 modules-left = i3 xkeyboard
 modules-center = date
@@ -187,17 +188,25 @@ type = internal/network
 interface = wlp4s0
 interval = 2.0
 
-format-connected = <label-connected>
+format-connected = <ramp-signal> <label-connected>
 format-connected-padding = 2
-format-connected-background = ${colors.darkgreen}
-label-connected =  %essid%
-label-connected-foreground = ${colors.softbackground}
+format-connected-background = ${colors.darkmagenta}
+label-connected = %essid%
+label-connected-foreground = ${colors.background}
 
 format-disconnected = "No Wifi"
 format-disconnected-padding = 1
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-font = 3
+ramp-signal-foreground = ${colors.background}
 
 
 [module/eth]
@@ -220,14 +229,12 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date-alt = "%Y-%m-%d"
-
 time = " %H:%M"
 
 format-padding = 2
 format-prefix = 
 format-prefix-font = 1
-format-foreground = ${colors.softbackground}
+format-foreground = ${colors.background}
 format-background = ${colors.darkred}
 ;format-underline = ${colors.darkred}
 
