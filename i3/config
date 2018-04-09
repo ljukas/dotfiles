@@ -63,8 +63,6 @@ set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -72,8 +70,6 @@ bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -81,8 +77,6 @@ bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
 bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
 
 
 # reload the configuration file
@@ -172,9 +166,9 @@ client.urgent		$red $red $white $red $red
 
 
 # default workspaces
-assign [class="Spotify"] $workspace7
+assign [class="Spotify"] $workspace5
 assign [class="Toolbox"] $workspace4
-for_window [class="Spotify"] move to workspace $workspace7
+for_window [class="Spotify"] move to workspace $workspace5
 
 
 # Startup
