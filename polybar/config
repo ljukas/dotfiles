@@ -47,9 +47,9 @@ border-top-size = 0
 border-right-size = 0
 border-color = #00000000
 
-font-0 = "DejaVu Sans Mono Nerd Font:size=10;2"
+font-0 = "DejaVu Sans Mono Nerd Font:size=10;1"
 font-1 = "Droid Sans Mono Nerd Font Complete:size=11;3"
-font-2 = "Wuncon Siji:size=14;1"
+font-2 = "Wuncon Siji:size=10;1"
 
 modules-left = clock date
 modules-center = i3
@@ -69,18 +69,14 @@ label = %title:0:50:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-background = ${colors.darkmagenta}
-format-foreground = ${colors.softbackground}
-
-format = <label-layout>
+format = <label-indicator> <label-layout>
 format-padding = 1
 
-format-prefix = 
-format-prefix-font = 2
-format-prefix-foreground = ${colors.softbackground}
-format-prefix-padding = 1
-
-label-layout = %layout%
+label-layout = %layout% %{F#8abeb7 T3}%{F- T-}
+label-indicator = %name%
+label-indicator-foreground = ${colors.cyan}
+label-indicator-padding = 0
+label-indicator-font = 1
 
 
 [module/filesystem]
@@ -146,60 +142,19 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
-label = %percentage:2%%
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
 [module/wlan]
 type = internal/network
 interface = wlp4s0
 interval = 2.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected> <ramp-signal>
 format-connected-padding = 2
-format-connected-background = ${colors.darkmagenta}
 label-connected = %essid%
-label-connected-foreground = ${colors.background}
 
-format-disconnected = "No Wifi"
-format-disconnected-padding = 1
+format-disconnected = "No wifi"
+format-disconnected-padding = 2
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -207,7 +162,7 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-font = 3
-ramp-signal-foreground = ${colors.background}
+ramp-signal-foreground = ${colors.cyan}
 
 
 [module/eth]
@@ -309,77 +264,30 @@ adapter = AC
 full-at = 98
 poll-interval = 1
 
-format-charging = <ramp-capacity> <label-charging>
-format-charging-foreground = ${colors.softbackground}
-format-charging-background = ${colors.darkgreen}
+format-charging =  <label-charging>
 format-charging-padding = 2
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-background = ${colors.darkyellow}
+format-discharging = <label-discharging> <ramp-capacity>
 format-discharging-padding = 2
 
-format-full = <ramp-capacity> <label-full>
-format-full-prefix-foreground = ${colors.softbackground}
-format-full-background = ${colors.darkblue}
+format-full = <label-full> <ramp-capacity>
 format-full-padding = 2
 
-ramp-capacity-0 = ☠
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.softbackground}
-ramp-font = 2
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.cyan}
+ramp-font = 3
 
-label-charging-foreground = ${colors.background}
-label-full-foreground = ${colors.background}
-label-discharging-foreground = ${colors.background}
+label-charging = 
+label-charging-font = 3
+label-charging-foreground = ${colors.cyan}
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+label-percentage = %percentage%%
+label-percentage-font = 1
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+label-discharging = %percentage%%
+label-discharging-font = 1
 
 [settings]
 screenchange-reload = true
