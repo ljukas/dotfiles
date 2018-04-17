@@ -9,8 +9,8 @@
 ## GLOBAL ##
 ############
 
-dot_dir=$HOME/dotfiles
-backup=$HOME/backup_dotfiles
+dot_dir=$HOME/.dotfiles
+backup=$HOME/.backup_dotfiles
 
 ######################
 ## .config-dotfiles ##
@@ -54,7 +54,7 @@ for file in $config_files; do
         mv $config_dir/$file $backup/$file
     fi
     echo "Setting up symlink for '${file}'."
-    ln -s $dot_dir/$file $config_dir/$file
+    ln -s $dot_dir/$file $config_dir/$file -f
 done
 
 
