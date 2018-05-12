@@ -1,0 +1,18 @@
+# Aliases
+
+# Pacman/Yaourt
+alias update="sudo pacman -Syu"
+alias pacman="sudo pacman"
+alias ya="yaourt"
+
+# Editors
+alias vim="nvim"
+alias vi="nvim"
+
+# Convenience
+alias la="ls -al"
+
+# Python
+alias workoff="deactive; cd"
+alias py="python"
+

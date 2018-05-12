@@ -49,27 +49,12 @@ set foldcolumn=1
 " Plugins 
 """"""""""""""
 
-" Specify directory for pluggins
-call plug#begin('~/.local/share/nvim/plugged')
-
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-python/python-syntax'
-Plug 'scrooloose/nerdtree'
-
-" Initialize plugin system
-call plug#end()
-
-" NERDTree options
-autocmd vimenter * NERDTree
-let NERDTreeIgnore = ['\.pyc$']
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 """""""""""""""
 " Providers
 """""""""""""""
 
 "Python2 and 3
-let g:python_host_prog = '/usr/bin/python2'
+let g:python_host_prog = '/usr/bin/python'
 
 """"""""""""""""""""
 " Colors and Fonts
