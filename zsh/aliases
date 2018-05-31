@@ -1,16 +1,16 @@
 # Aliases
 
-# Pacman/Yaourt
-alias update="sudo pacman -Syu"
+# Pacman
+alias update="yay -Syu"
 alias pacman="sudo pacman"
-alias ya="yaourt"
 
 # Editors
 alias vim="nvim"
 alias vi="nvim"
 
 # Convenience
-alias la="ls -al"
+alias la="ls -al --color=auto"
+alias ls="ls --color=auto"
 
 # Python
 alias workoff="deactive; cd"

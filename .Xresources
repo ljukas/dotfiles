@@ -35,10 +35,12 @@
 *color7:  #a89984
 *color15: #ebdbb2
 
-Xft.dpi: 96
+Xft.dpi: 120
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+rofi.dpi: 120

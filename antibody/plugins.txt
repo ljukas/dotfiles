@@ -1,12 +1,24 @@
-mafredri/zsh-async # Perform tasks asynchronously
-spwhitt/nix-zsh-completions
-rupa/z # Jump around
-sobolevn/wakatime-zsh-plugin # Wakatime tracking
-Tarrasch/zsh-bd # Jump back to a specific directory
-zsh-users/zsh-completions # Additional completion definitions for Zsh
-zsh-users/zsh-autosuggestions branch:develop # Fish-like autosuggestions for zsh
-junegunn/fzf # Command-line fuzzy finder
-subnixr/minimal
-zsh-users/zsh-history-substring-search # Zsh port of the fish shell's history search
-zsh-users/zsh-syntax-highlighting # Fish shell like syntax highlighting for zsh
+# Perform tasks asynchronously
+mafredri/zsh-async 
+
+# Adds more colors
+chrissicool/zsh-256color
+
+# Jump back to a specific directory
+Tarrasch/zsh-bd 
+
+# Additional completion definitions for Zsh
+zsh-users/zsh-completions 
+
+# Fish-like autosuggestions for zsh
+zsh-users/zsh-autosuggestions 
+
+# Command-line fuzzy finder
+junegunn/fzf 
+
+# Fish shell like syntax highlighting for zsh
+zsh-users/zsh-syntax-highlighting 
+
 sharat87/zsh-vim-mode
+
+sindresorhus/pure
