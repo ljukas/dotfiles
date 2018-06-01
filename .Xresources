@@ -44,3 +44,11 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 rofi.dpi: 120
+rofi.display-run: ~>
+rofi.lines: 5
+rofi.width: 800
+rofi.font: Inconsolata 14
+rofi.matching: fuzzy
+rofi.terminal: termite
+rofi.modi: ssh,window,drun,run
+rofi.sidebar-mode: true

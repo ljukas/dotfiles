@@ -21,4 +21,4 @@ zsh-users/zsh-syntax-highlighting
 
 sharat87/zsh-vim-mode
 
-sindresorhus/pure
+denysdovhan/spaceship-prompt
