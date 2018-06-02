@@ -59,7 +59,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=10;3
 
 modules-left = i3
 modules-center = date  
-modules-right = pulseaudio wlan xkeyboard battery temperature clock 
+modules-right = xkeyboard pulseaudio backlight wlan battery temperature clock 
 
 wm-restack = i3
 
@@ -75,12 +75,11 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format = <label-indicator> <label-layout>
-format-padding = 1
 
 label-layout = %layout% %{F#d3869b}%{F-}
+label-layout-padding-right = 2
 label-indicator = %name%
 label-indicator-foreground = ${colors.red}
-label-indicator-padding = 0
 label-indicator-font = 1
 
 
@@ -130,12 +129,10 @@ interface = wlp2s0
 interval = 2.0
 
 format-connected = <label-connected> <ramp-signal>
-format-connected-padding = 2
 label-connected = %essid%
+ramp-signal-padding-right = 2
 
-format-disconnected = "No wifi"
-format-disconnected-padding = 2
-;format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
 
 ramp-signal-0 = %{F#fb4935}%{F-}
@@ -147,10 +144,9 @@ ramp-signal-2 = %{F#b8bb26}%{F-}
 type = internal/date
 interval = 5
 
-
 time = "%H:%M"
 format = <label> 
-format-padding = 1
+format-padding = 2
 
 label = %time% %{F#689d6a}%{F-}
 label-font = 1
@@ -164,30 +160,15 @@ date = "%a %b %d"
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume =  <bar-volume> <label-volume>
-label-volume = 
-label-volume-foreground = ${colors.cyan}
-label-volume-font = 3
+format-volume =  <label-volume>
+
+label-volume = %percentage%% %{F#83a598}%{F-}
+label-volume-font = 2
 label-volume-padding-right = 2
 
-label-muted = muted
-label-muted-foreground = ${colors.foreground}
-
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.cyan}
-bar-volume-foreground-1 = ${colors.cyan}
-bar-volume-foreground-2 = ${colors.cyan}
-bar-volume-foreground-3 = ${colors.cyan}
-bar-volume-foreground-4 = ${colors.cyan}
-bar-volume-foreground-5 = ${colors.cyan}
-bar-volume-foreground-6 = ${colors.cyan}
-bar-volume-indicator = |
-bar-volume-indicator-font = 1
-bar-volume-fill = ─
-bar-volume-fill-font = 1
-bar-volume-empty = ─
-bar-volume-empty-font = 1
-bar-volume-empty-foreground = ${colors.foreground}
+label-muted = muted
+label-muted-foreground = ${colors.red}
+label-muted-padding-right = 2
 
 
 [module/battery]
@@ -198,13 +179,10 @@ full-at = 98
 poll-interval = 1
 
 format-charging = <label-charging> %{F#d79921}%{F-}
-format-charging-padding = 2
 
 format-discharging = <label-discharging> <ramp-capacity>
-format-discharging-padding = 2
 
 format-full = <label-full> <ramp-capacity>
-format-full-padding = 2
 
 ramp-capacity-0 = %{F#fb4934}%{F-}
 ramp-capacity-1 = %{F#d79921}%{F-}
@@ -222,6 +200,14 @@ label-percentage-font = 1
 
 label-discharging = %percentage%%
 label-discharging-font = 1
+
+[module/backlight]
+type = internal/xbacklight
+
+format = <label>
+
+label = %percentage%% %{F#d79921}%{F-}
+label-padding-right = 2
 
 
 [settings]
