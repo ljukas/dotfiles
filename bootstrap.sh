@@ -24,7 +24,7 @@ echo "---------------------------"
 config_dir=$HOME/.config
 
 ## Dirs to create
-dirs_to_make="i3 nvim rofi polybar termite"
+dirs_to_make="i3 nvim rofi polybar termite dunst"
 
 ## File paths for config files (dotfiles residing in .config)
 nvim="nvim/init.vim"
@@ -33,9 +33,10 @@ compton="i3/compton.conf"
 rofi="rofi/config"
 polybar="polybar/config"
 termite="termite/config"
+dunst="dunst/dunstrc"
 
 ## List of file paths
-config_files="$nvim $i3 $compton $rofi $polybar $termite"
+config_files="$nvim $i3 $compton $rofi $polybar $termite $dunst"
 
 ## Create the required directories
 mkdir -p $config_dir

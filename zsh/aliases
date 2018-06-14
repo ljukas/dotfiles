@@ -16,3 +16,5 @@ alias ls="ls --color=auto"
 alias workoff="deactive; cd"
 alias py="python"
 
+# Docker
+alias dcd="docker-compose -f docker-compose.dev.yml"
