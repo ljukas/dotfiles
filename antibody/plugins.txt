@@ -4,21 +4,16 @@ mafredri/zsh-async
 # Adds more colors
 chrissicool/zsh-256color
 
-# Jump back to a specific directory
-Tarrasch/zsh-bd 
-
 # Additional completion definitions for Zsh
 zsh-users/zsh-completions 
 
 # Fish-like autosuggestions for zsh
 zsh-users/zsh-autosuggestions 
 
-# Command-line fuzzy finder
-junegunn/fzf 
-
 # Fish shell like syntax highlighting for zsh
 zsh-users/zsh-syntax-highlighting 
 
-sharat87/zsh-vim-mode
+# Cd to git-root
+mollifier/cd-gitroot
 
 denysdovhan/spaceship-prompt

@@ -36,45 +36,44 @@ scrollback_lines = 10000
 
 # "off", "left" or "right"
 #scrollbar = off
-
 [colors]
 
 # special
-foreground      = #ebdbb2
-foreground_bold = #ebdbb2
-cursor          = #ebdbb2
-background      = #282828
+foreground      = #d8dee9
+foreground_bold = #d8dee9
+cursor          = #d8dee9
+background      = #2e3440
 
 # black
-color0  = #282828
-color8  = #928374
+color0  = #3b4252
+color8  = #4c566a
 
 # red
-color1  = #cc241d
-color9  = #fb4934
+color1  = #bf616a
+color9  = #bf616a
 
 # green
-color2  = #98971a
-color10 = #b8bb26
+color2  = #a3be8c
+color10 = #a3be8c
 
 # yellow
-color3  = #d79921
-color11 = #fabd2f
+color3  = #ebcb8b
+color11 = #ebcb8b
 
 # blue
-color4  = #458588
-color12 = #83a598
+color4  = #81a1c1
+color12 = #81a1c1
 
 # magenta
-color5  = #b16286
-color13 = #d3869b
+color5  = #b48ead
+color13 = #b48ead
 
 # cyan
-color6  = #689d6a
-color14 = #8ec07c
+color6  = #88c0d0
+color14 = #8fbcbb
 
 # white
-color7  = #a89984
-color15 = #ebdbb2
+color7  = #e5e9f0
+color15 = #eceff4
 
 # vim: ft=dosini cms=#%s

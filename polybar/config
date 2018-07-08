@@ -9,7 +9,6 @@
 
 [colors]
 background = ${xrdb:background:#222}
-softbackground = #32302f
 foreground = ${xrdb:foreground:#222}
 black = ${xrdb:color0}
 darkgrey = ${xrdb:color8}
@@ -34,7 +33,7 @@ width = 100%
 height = 40 
 ;offset-x = 15%
 ;offset-y = 1%
-radius = 5
+;radius = 5
 fixed-center = true
 ;override-redirect = true
 bottom = false 
@@ -43,11 +42,11 @@ dpi = 120
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-left-size = 20
-border-top-size = 5
-border-right-size = 20
-border-bottom-size = 0
-border-color = #00000000
+;border-left-size = 20
+;border-top-size = 5
+;border-right-size = 20
+;border-bottom-size = 0
+;border-color = #00000000
 
 tray-position = right
 tray-detached = false
@@ -89,11 +88,11 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;
+ws-icon-0 = 1;1: 
+ws-icon-1 = 2;2: 
+ws-icon-2 = 3;3: 
+ws-icon-3 = 4;4: 
+ws-icon-4 = 5;5: 
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -101,7 +100,7 @@ ws-icon-4 = 5;
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-foreground = ${colors.darkgreen}
-label-focused-padding = 2
+label-focused-padding = 1
 label-focused-spacing = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -135,9 +134,9 @@ ramp-signal-padding-right = 2
 format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
 
-ramp-signal-0 = %{F#fb4935}%{F-}
-ramp-signal-1 = %{F#fabd2f}%{F-}
-ramp-signal-2 = %{F#b8bb26}%{F-}
+ramp-signal-0 = %{F#BF616A}%{F-}
+ramp-signal-1 = %{F#EBCB8B}%{F-}
+ramp-signal-2 = %{F#A3BE8C}%{F-}
 
 
 [module/clock]
@@ -148,7 +147,7 @@ time = "%H:%M"
 format = <label> 
 format-padding = 2
 
-label = %time% %{F#689d6a}%{F-}
+label = %time% %{F#B48EAD}%{F-}
 label-font = 1
 label-foreground = ${colors.foreground}
 
@@ -162,7 +161,7 @@ type = internal/pulseaudio
 
 format-volume =  <label-volume>
 
-label-volume = %percentage%% %{F#83a598}%{F-}
+label-volume = %percentage%% %{F#81A1C1}%{F-}
 label-volume-font = 2
 label-volume-padding-right = 2
 
@@ -178,14 +177,13 @@ adapter = AC
 full-at = 98
 poll-interval = 5
 
-format-charging = <label-charging> %{F#d79921}%{F-}
-
+format-charging = <label-charging> %{F#EBCB8B}%{F-}
 format-discharging = <label-discharging> <ramp-capacity>
 
 format-full = <label-full> <ramp-capacity>
 
-ramp-capacity-0 = %{F#fb4934}%{F-}
-ramp-capacity-1 = %{F#d79921}%{F-}
+ramp-capacity-0 = %{F#BF616A}%{F-}
+ramp-capacity-1 = %{F#BF616A}%{F-}
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
@@ -206,7 +204,7 @@ type = internal/xbacklight
 
 format = <label>
 
-label = %percentage%% %{F#d79921}%{F-}
+label = %percentage%% %{F#EBCB8B}%{F-}
 label-padding-right = 2
 
 
