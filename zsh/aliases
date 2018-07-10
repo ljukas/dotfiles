@@ -21,3 +21,9 @@ alias dcd="docker-compose -f docker-compose.dev.yml"
 
 # Cd-root
 alias cdr="cd-gitroot"
+
+# reload polybar
+alias repoly="~/.dotfiles/polybar/launch.sh"
+
+# Setup screens
+alias screens="~/.dotfiles/scripts/dual-screen.sh"

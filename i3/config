@@ -17,6 +17,9 @@ bindsym $mod+d exec rofi -show run
 # Turn of mouseover focus
 focus_follows_mouse no
 
+bindsym $mod+m move workspace to output HDMI1
+bindsym $mod+n move workspace to output primary
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
