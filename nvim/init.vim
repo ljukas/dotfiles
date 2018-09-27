@@ -20,7 +20,7 @@ set wildmenu
 set ruler
 
 " Heigh of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " Ignore case when searching
 set ignorecase

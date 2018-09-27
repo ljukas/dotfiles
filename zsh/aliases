@@ -27,3 +27,9 @@ alias repoly="~/.dotfiles/polybar/launch.sh"
 
 # Setup screens
 alias screens="~/.dotfiles/scripts/dual-screen.sh"
+
+# Code
+alias code="code --extensions-dir ~/.vscode/extensions"
+
+# Nix
+alias nixd='. /home/lukas/.nix-profile/etc/profile.d/nix.sh'

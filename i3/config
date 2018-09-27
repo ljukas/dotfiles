@@ -6,7 +6,7 @@ set $mod Mod4
 
 floating_modifier $mod
 
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec termite 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -19,6 +19,7 @@ focus_follows_mouse no
 
 bindsym $mod+m move workspace to output HDMI1
 bindsym $mod+n move workspace to output primary
+
 
 # change focus
 bindsym $mod+h focus left
@@ -53,7 +54,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -115,6 +116,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Lockscreen
+bindsym $mod+p exec betterlockscreen -l dim
 
 # Gaps
 gaps outer 5
@@ -124,18 +127,8 @@ gaps inner 5
 new_window pixel 0
 hide_edge_borders smart
 
-# Keyboard layout
-set $keyboard_layout Keyboard: (s) se, (e) us
-mode "$keyboard_layout" {
-
-bindsym s exec --no-startup-id setxkbmap se ,mode "default"
-bindsym e exec --no-startup-id setxkbmap us ,mode "default"
-
-# back to normal: Enter or Escape
-bindsym Return mode "default"
-bindsym Escape mode "default"
-}
-bindsym $mod+shift+Z mode "$keyboard_layout"
+# Keyboard toggle
+exec_always --no-startup-id "setxkbmap -layout us,se -option grp:alt_shift_toggle"
 
 #########
 # Theme #
@@ -168,7 +161,7 @@ font pango:monospace 10
 # class			border|backgr|text|indicator|child_border
 client.focused		$blue $blue $darkgray $magenta $darkmagenta
 client.focused_inactive $darkgray $darkgray $yellow $magenta $darkgray
-client.unfocused	$darkgray $darkgray $yellow $mangeta $darkgray
+client.unfocused	$darkgray $darkgray $yellow $mangenta $darkgray
 client.urgent		$red $red $white $red $red
 
 

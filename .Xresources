@@ -56,3 +56,8 @@ rofi.matching: fuzzy
 rofi.terminal: termite
 rofi.modi: ssh,window,drun,run
 rofi.sidebar-mode: true
+
+URxvt*font: xft:Inconsolata\ for\ Powerline:size=12
+URxvt*scrollBar: false
+URxvt*transparent: false
+URxvt*buffered: false

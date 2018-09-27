@@ -4,16 +4,20 @@ mafredri/zsh-async
 # Adds more colors
 chrissicool/zsh-256color
 
-# Additional completion definitions for Zsh
-zsh-users/zsh-completions 
 
-# Fish-like autosuggestions for zsh
+zsh-users/zsh-completions 
 zsh-users/zsh-autosuggestions 
 
-# Fish shell like syntax highlighting for zsh
-zsh-users/zsh-syntax-highlighting 
+robbyrussell/oh-my-zsh folder:plugins/vi-mode
 
 # Cd to git-root
 mollifier/cd-gitroot
 
+# Jump around
+rupa/z
+
+# These should be last
 denysdovhan/spaceship-prompt
+#sindresorhus/pure
+zsh-users/zsh-syntax-highlighting 
+zsh-users/zsh-history-substring-search
