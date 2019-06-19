@@ -1,7 +1,6 @@
 # Aliases
 
 # Pacman
-alias update="yay -Syu"
 alias pacman="sudo pacman"
 
 # Editors
@@ -28,8 +27,8 @@ alias repoly="~/.dotfiles/polybar/launch.sh"
 # Setup screens
 alias screens="~/.dotfiles/scripts/dual-screen.sh"
 
-# Code
-#alias code="code --extensions-dir ~/.vscode/extensions"
-
 # Nix
-alias nixd='. /home/lukas/.nix-profile/etc/profile.d/nix.sh'
+alias nixd="./home/lukas/.nix-profile/etc/profile.d/nix.sh"
+
+# Spotify - Correct aspect ratio
+alias spotify="spotify --force-device-scale-factor=1.3"

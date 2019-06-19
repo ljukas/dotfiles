@@ -1,21 +1,36 @@
+export LC_ALL="en_US.UTF-8"
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
-setopt appendhistory autocd extendedglob nomatch notify
-bindkey -v
+# setopt appendhistory autocd extendedglob nomatch notify
+setopt notify
 # End of lines configured by zsh-newuser-install
 
+#bindkey -v
 source ~/.dotfiles/zsh/aliases
 source ~/.zsh_plugins.sh
 
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/dev/python
-source /usr/bin/virtualenvwrapper_lazy.sh
+#export WORKON_HOME=~/.virtualenvs
+#export PROJECT_HOME=~/prog
+#source /usr/bin/virtualenvwrapper_lazy.sh
 
 export KEYTIMEOUT=1
 export SPACESHIP_VI_MODE_INSERT='i'
 export SPACESHIP_VI_MODE_NORMAL='n'
+export SPACESHIP_VI_MODE_COLOR=red
 
 export VISUAL="vi"
 export EDITOR="vi"
+
+export NPM_PACKAGES="/home/lukas/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+precmd() {
+    stty sane
+}
