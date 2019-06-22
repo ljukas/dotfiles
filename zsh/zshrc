@@ -10,6 +10,8 @@ setopt notify
 #bindkey -v
 source ~/.dotfiles/zsh/aliases
 source ~/.zsh_plugins.sh
+autoload -Uz compinit
+compinit
 
 #export WORKON_HOME=~/.virtualenvs
 #export PROJECT_HOME=~/prog

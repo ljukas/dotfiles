@@ -39,7 +39,7 @@
 *.color15: nord6
 
 
-Xft.dpi: 120
+Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -47,7 +47,7 @@ Xft.autohint: false
 Xft.hintstyle: hintfull 
 Xft.lcdfilter: lcddefault
 
-rofi.dpi: 120
+rofi.dpi: 96
 rofi.display-run: ~>
 rofi.lines: 8
 rofi.width: 900
