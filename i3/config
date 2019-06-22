@@ -17,8 +17,8 @@ bindsym $mod+d exec rofi -show run
 # Turn of mouseover focus
 focus_follows_mouse no
 
-bindsym $mod+m move workspace to output HDMI1
-bindsym $mod+n move workspace to output primary
+bindsym $mod+m move workspace to output left
+bindsym $mod+n move workspace to output right
 
 
 # change focus
@@ -177,6 +177,7 @@ exec --no-startup-id spotify --force-device-scale-factor=1.25
 exec --no-startup-id compton --config ~/.dotfiles/i3/compton.conf -b
 exec --no-startup-id nm-applet
 exec --no-startup-id slack
+exec --no-startup-id autorandr -c
 
 # Touchpad settings
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 0.6
