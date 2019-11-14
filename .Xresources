@@ -1,3 +1,4 @@
+#define dpi 120
 #define nord0 #2E3440
 #define nord1 #3B4252
 #define nord2 #434C5E
@@ -18,6 +19,7 @@
 *.foreground:   nord4
 *.background:   nord0
 *.cursorColor:  nord4
+Xcursor.size: 16
 *fading: 35
 *fadeColor: nord3
 
@@ -39,7 +41,8 @@
 *.color15: nord6
 
 
-Xft.dpi: 120
+!Xft.dpi: 126
+!Xft.dpi: 120
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -47,7 +50,8 @@ Xft.autohint: false
 Xft.hintstyle: hintfull 
 Xft.lcdfilter: lcddefault
 
-rofi.dpi: 120
+!rofi.dpi: 126
+!rofi.dpi: 196
 rofi.display-run: ~>
 rofi.lines: 8
 rofi.width: 900
@@ -61,3 +65,4 @@ URxvt*font: xft:Inconsolata\ for\ Powerline:size=12
 URxvt*scrollBar: false
 URxvt*transparent: false
 URxvt*buffered: false
+
