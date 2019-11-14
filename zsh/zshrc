@@ -23,7 +23,6 @@ SAVEHIST=5000
 setopt notify
 # End of lines configured by zsh-newuser-install
 
-
 source ~/.zsh_plugins.sh
 source ~/.dotfiles/zsh/aliases
 
