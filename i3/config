@@ -117,8 +117,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+p exec betterlockscreen -l dim
 
 # Gaps
-gaps outer 0
-gaps inner 0
+gaps outer 2
+gaps inner 4
 
 # Border
 default_border pixel 1
