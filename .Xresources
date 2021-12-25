@@ -42,7 +42,7 @@ Xcursor.size: 16
 
 
 !Xft.dpi: 126
-!Xft.dpi: 120
+Xft.dpi: 126
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb

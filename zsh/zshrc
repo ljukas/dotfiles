@@ -25,12 +25,12 @@ setopt notify
 
 source ~/.zsh_plugins.sh
 source ~/.dotfiles/zsh/aliases
+source /usr/share/nvm/init-nvm.sh
 
 export KEYTIMEOUT=1
 export SPACESHIP_VI_MODE_INSERT='i'
 export SPACESHIP_VI_MODE_NORMAL='n'
 export SPACESHIP_VI_MODE_COLOR=red
-
 autoload -Uz compinit
 
 for dump in ~/.zcompdump(N.mh+24); do
@@ -44,11 +44,14 @@ for file in ${(M)config_files:#*/completion.zsh}; do
     source "$file"
 done
 
+# Enable horizontal scrolling
+#xinput set-prop "Synaptics TM3512-010" 300 1 1
 
-export NPM_PACKAGES="/home/lukas/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
-export PATH="$NPM_PACKAGES/bin:$PATH"
+#export NPM_PACKAGES="/home/lukas/.npm-packages"
+#export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
+#export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
 # command
-unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+#unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+#export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export REGISTRY_TOKEN="c04cff8dc79ae55ee17219f2f1e0562eca3b58f2"

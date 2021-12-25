@@ -37,7 +37,7 @@ height = 30
 fixed-center = true
 ;override-redirect = true
 bottom = false 
-dpi = ${xrdb:Xft:dpi}
+dpi = 96
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -52,7 +52,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=10;3
 
 modules-left = i3
 modules-center = date  
-modules-right = xkeyboard pulseaudio backlight wlan battery clock 
+modules-right = xkeyboard pulseaudio backlight wlan wlan2 battery clock 
 
 wm-restack = i3
 
@@ -120,6 +120,22 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/wlan]
 type = internal/network
 interface = wlp2s0
+interval = 2.0
+
+format-connected = <label-connected> <ramp-signal>
+label-connected = %essid%
+ramp-signal-padding-right = 2
+
+format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+
+ramp-signal-0 = %{F#BF616A}%{F-}
+ramp-signal-1 = %{F#EBCB8B}%{F-}
+ramp-signal-2 = %{F#A3BE8C}%{F-}
+
+[module/wlan2]
+type = internal/network
+interface = wlp82s0
 interval = 2.0
 
 format-connected = <label-connected> <ramp-signal>

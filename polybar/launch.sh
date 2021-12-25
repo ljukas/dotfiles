@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+DIR="$HOME/.dotfiles/polybar"
 
 # Terminate already running bar instances
 killall -q polybar
@@ -6,10 +8,36 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-connectedOutputs=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
+# Launch the bar according to the wm you are using
+t=$(xrandr -q | grep " connected" | cut -d ' ' -f1)
 
-for displayId in $connectedOutputs; do
-    MONITOR="$displayId" polybar -r main &
+for displayId in $t; do
+    MONITOR="$displayId" polybar -r main -c "$DIR"/config_i3.ini &
 done
 
-echo "Bars launched..."
+# if [ "$t" = "3" ]; then
+#     # two monitors setup
+#     if [ "$DESKTOP_SESSION" = "i3" ]; then
+#         # launch two bars
+#         echo "Launching two Polybar for i3 dual monitor."
+#         if [ "$1" == "-compact" ]; then
+#             polybar -q main -c "$DIR"/config_i3_campact.ini &
+#             polybar -q main2 -c "$DIR"/config_i3_2_compact.ini &
+#         else
+#             polybar -q main -c "$DIR"/config_i3.ini &
+#             polybar -q main2 -c "$DIR"/config_i3_2.ini &
+#         fi
+#     # add config for other wm
+#     fi
+# else
+#     # one monitor setup
+#     if [ "$DESKTOP_SESSION" = "i3" ]; then
+#         echo "Launching Polybar for i3."
+#         if [ "$1" == "-compact" ]; then
+#             polybar -q main -c "$DIR"/config_i3_compact.ini &
+#         else
+#             polybar -q main -c "$DIR"/config_i3.ini &
+#         fi
+#     fi
+#     # add config for other wm
+# fi

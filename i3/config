@@ -6,20 +6,21 @@ set $mod Mod4
 
 floating_modifier $mod
 
-bindsym $mod+Return exec termite 
+bindsym $mod+Return exec alacritty --config-file ~/.dotfiles/alacritty.yml
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec --no-startup-id "~/.config/rofi/launchers/colorful/launcher.sh"
 
 # Turn of mouseover focus
 focus_follows_mouse no
 
 bindsym $mod+m move workspace to output left
 bindsym $mod+n move workspace to output right
-
+bindsym $mod+u move workspace to output down
+bindsym $mod+i move workspace to output up
 
 # change focus
 bindsym $mod+h focus left
@@ -116,12 +117,16 @@ bindsym $mod+r mode "resize"
 # Lockscreen
 bindsym $mod+p exec betterlockscreen -l dim
 
+# Region Screengrab
+bindsym $mod+Shift+s exec --no-startup-id screengrab -r
+
 # Gaps
-gaps outer 2
-gaps inner 4
+gaps outer 6
+gaps inner 8
 
 # Border
-default_border pixel 1
+default_border pixel 
+default_floating_border pixel 
 hide_edge_borders smart
 
 # Keyboard toggle
@@ -170,17 +175,27 @@ for_window [class="Slack"] move to workspace $workspace4
 for_window [class="Spotify"] move to workspace $workspace5
 
 
+# Program Specific options
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="nautilus"] floating enable
+for_window [class="blueman-manager"] floating enable
+
 # Startup
-exec --no-startup-id compton --config ~/.dotfiles/i3/compton.conf -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec --no-startup-id $HOME/.dotfiles/scripts/battery.sh
 # exec --no-startup-id spotify --force-device-scale-factor=1.25
 exec --no-startup-id spotify
 exec --no-startup-id nm-applet
 exec --no-startup-id slack
+exec --no-startup-id blueman-applet
+exec --no-startup-id deadd-notification-center
+exec --no-startuo-id xautolock -time 15 -locker "systemctl suspend" -detectsleep
 
 # Touchpad settings
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "Coordinate Transformation Matrix" 1.0 0 0 0 1.0 0 0 0 0.6
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # Background
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpapers/space.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/wallpapers/lighthouse.png

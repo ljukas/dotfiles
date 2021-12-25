@@ -24,6 +24,13 @@ alias dkcl="docker-compose logs"
 alias dkclf="docker-compose logs -f"
 alias dkce="docker-compose exec"
 
+# Git
+alias gitc="git commit"
+alias gitcm="gitc -m"
+alias gitp="git push"
+alias gita="git add"
+alias gits="git status"
+
 # Cd-root
 alias cdr="cd-gitroot"
 
